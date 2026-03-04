@@ -8,11 +8,12 @@
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap';
-import './styles/style.css';
+import './styles/style.css'
 import {
     loginUser,
     signupUser,
     authErrorMessage,
+    onAuthReady,
 } from './authentication.js';
 
 
@@ -123,6 +124,17 @@ function initAuthUI() {
         }
     });
 }
+
+function redirectToMainIfLoggedIn() {
+  onAuthReady(user => {
+    if (user) {
+      location.href = "main.js";
+      return;
+    }
+  })
+}
+
+redirectToMainIfLoggedIn();
 
 // --- Initialize UI on DOMContentLoaded ---
 document.addEventListener('DOMContentLoaded', initAuthUI);

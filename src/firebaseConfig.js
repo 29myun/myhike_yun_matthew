@@ -11,6 +11,7 @@
 // Import Firebase SDK modules (using Firebase v9 modular syntax)
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
 // ---------------------------------------------------------
 // Read Firebase configuration from Vite environment variables.
@@ -24,10 +25,12 @@ import { getAuth } from "firebase/auth";
 // ⚠️ Note: Vite only exposes environment variables that start with "VITE_"
 // ---------------------------------------------------------
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
-  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  apiKey: "AIzaSyC1smXYqmbtffFkuTqUVR3xODZn55rjNg0",
+  authDomain: "fir-30ca7.firebaseapp.com",
+  projectId: "fir-30ca7",
+  storageBucket: "fir-30ca7.firebasestorage.app",
+  messagingSenderId: "924771192359",
+  appId: "1:924771192359:web:9b703c2474746e37a9c802"
 };
 
 // ---------------------------------------------------------
@@ -42,3 +45,4 @@ const app = initializeApp(firebaseConfig);
 // or signout operations (that's why we export it).
 // ---------------------------------------------------------
 export const auth = getAuth(app);
+export const db = getFirestore(app);
