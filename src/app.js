@@ -6,7 +6,6 @@ import { auth } from "/src/firebaseConfig.js";
 // If you have custom global styles, import them as well:
 //--------------------------------------------------------------
 import '/src/styles/style.css';
-import { onAuthReady } from './authentication';
 
 //--------------------------------------------------------------
 // Custom global JS code (shared with all pages)can go here.
@@ -16,21 +15,5 @@ import { onAuthReady } from './authentication';
 function sayHello() {
   // TODO: implement your logic here
 }
-
-function hideLoginSignupButton() {
-  const loginBtn = document.getElementsByClassName('loginBtn')
-
-  onAuthReady(user => {
-    if (user) {
-      loginBtn.style.visibility = "hidden";
-      return; 
-    }
-    
-    loginBtn.style.visibility = "visible";
-  })
-}
-
-hideLoginSignupButton()
-
 
 document.addEventListener('DOMContentLoaded', sayHello);

@@ -6,13 +6,13 @@
 // (login, signup, logout, and auth state checks).
 // -------------------------------------------------------------
 
-import { db } from "/src/firebaseConfig.js";
-import { doc, setDoc } from "firebase/firestore";
 
 // Import the initialized Firebase Authentication object
 import { auth } from "/src/firebaseConfig.js";
+import { db } from "/src/firebaseConfig.js";
 
 // Import specific functions from the Firebase Auth SDK
+import { doc, setDoc } from "firebase/firestore";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,

@@ -128,7 +128,7 @@ function initAuthUI() {
 function redirectToMainIfLoggedIn() {
   onAuthReady(user => {
     if (user) {
-      location.href = "main.js";
+      window.location.href = "main.html";
       return;
     }
   })
